@@ -1,0 +1,31 @@
+<% layout('layouts/boilerplate')%>
+
+    <h1>All Teams</h1>
+    <div>
+        <a href="/teams/new">Add Team</a>
+    </div>
+    <% for (let team of teams){%>
+        <div class="card" mb-3>
+            <div class="row">
+                <div class="col-md-4">
+                    <img class="img-fluid" alt="" src="<%=team.image%>">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <%= team.title %>
+                        </h5>
+                        <p class="card-text">
+                            <%= team.description %>
+                        </p>
+                        <p class="card-text">
+                            <small class="text-muted">
+                                <%= team.location%>
+                            </small>
+                        </p>
+                        <a class="btn btn-primary" href="/teams/<%=team._id%>">View <%=team.title%></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <% }%>

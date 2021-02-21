@@ -1,0 +1,44 @@
+<% layout('layouts/boilerplate')%>
+
+    <div class="row">
+        <div class="col-6 offset-3">
+            <div class="card mb-3">
+                <img src="<%= team.image%>" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <%= team.title %>
+                    </h5>
+                    <p class="card-text">
+                        <%= team.description %>
+                    </p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item text-muted">
+                        <%= team.location %>
+                    </li>
+                    <li class="list-group-item">$<%= team.cost %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= team.sport %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= team.league %>
+                    </li>
+                    <li class="list-group-item">
+                        <%= team.level %>
+                    </li>
+                </ul>
+                <div class="card-body">
+
+                    <a class="card-link btn btn-info" href="/teams/<%=team._id%>/edit">Edit</a>
+                    <form class="d-inline" action="/teams/<%=team._id%>?_method=DELETE" method="POST">
+                        <button class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+                <div class="card-footer text-muted">
+                    2 days ago
+                    <a href="/teams">All Teams</a>
+                </div>
+            </div>
+        </div>
+    </div>
